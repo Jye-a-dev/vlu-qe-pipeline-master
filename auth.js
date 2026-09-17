@@ -17,7 +17,7 @@ const USERS_DB = {
 
 /**
  * Hàm xác thực đăng nhập người dùng
- * @param {string} username - Tên đăng nhập
+ * @param {string} username - Tên đăng nhập....
  * @param {string} password - Mật khẩu
  * @returns {boolean} true nếu đăng nhập thành công, false nếu sai mật khẩu hoặc tài khoản không tồn tại
  * @throws {Error} khi dữ liệu đầu vào không hợp lệ hoặc tài khoản bị khóa
