@@ -1,18 +1,18 @@
 // auth.regression.test.js
 const { login } = require('./auth');
 
-describe('Regression Test - Authentication Service (Ngoại lệ & Biên)', () => {
-  describe('1. Kiểm tra xác thực thông tin tài khoản (Authentication)', () => {
-    test('Mật khẩu sai -> trả về false', () => {
-      const result = login('admin', 'wrong_password');
-      expect(result).toBe(false);
-    });
-
-    test('Tài khoản không tồn tại trong hệ thống -> trả về false', () => {
-      const result = login('non_existent_user', '123');
-      expect(result).toBe(false);
-    });
+describe('1. Kiểm tra xác thực thông tin tài khoản (Authentication)', () => {
+  test('Mật khẩu sai -> trả về false', () => {
+    // Sửa 'wrong_password' thành 'wrongpassword' hoặc 'wrong123'
+    const result = login('admin', 'wrongpassword');
+    expect(result).toBe(false);
   });
+
+  test('Tài khoản không tồn tại trong hệ thống -> trả về false', () => {
+    const result = login('non_existent_user', '123');
+    expect(result).toBe(false);
+  });
+});
 
   describe('2. Kiểm tra tài khoản bị khóa', () => {
     test('Tài khoản đã bị khóa -> ném ngoại lệ "Tài khoản đã bị khóa"', () => {
